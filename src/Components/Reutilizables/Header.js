@@ -30,7 +30,7 @@ export default function Header() {
                     <div className='flex flex-row divide-x divide-amber-400 text-[18px]'>
                         <div className='text-center'>
                             <p 
-                                className='font-bold font-mono py-1 pr-3 cursor-pointer text-amber-400 hover:text-amber-300'
+                                className='font-bold font-mono py-1 pr-3 cursor-pointer text-amber-400 hover:text-amber-300 transition-all duration-100'
                                 onClick={()=>navigate('/main')}
                             >
                                 Inicio
@@ -38,7 +38,7 @@ export default function Header() {
                         </div>
                         <div className='text-center'>
                             <p 
-                                className='font-bold font-mono py-1 px-3 cursor-pointer text-amber-400 hover:text-amber-300'
+                                className='font-bold font-mono py-1 px-3 cursor-pointer text-amber-400 hover:text-amber-300 transition-all duration-100'
                                 onClick={()=>navigate('/panel_general')}
                             >
                                 Panel General
@@ -46,7 +46,7 @@ export default function Header() {
                         </div>
                         <div className='text-center'>
                             <p 
-                                className='font-bold font-mono py-1 px-3 cursor-pointer text-amber-400 hover:text-amber-300'
+                                className='font-bold font-mono py-1 px-3 cursor-pointer text-amber-400 hover:text-amber-300 transition-all duration-100'
                                 onClick={()=>navigate('/info')}
                             >
                                 Información
@@ -57,7 +57,7 @@ export default function Header() {
                             user.attributes['custom:roles'] === 'admin' &&
                             <div className='text-center'>
                                 <p 
-                                    className='font-bold font-mono py-1 px-3 cursor-pointer text-amber-400 hover:text-amber-300'
+                                    className='font-bold font-mono py-1 px-3 cursor-pointer text-amber-400 hover:text-amber-300 transition-all duration-100'
                                     onClick={()=>navigate('/panel_administrador')}
                                 >
                                     Panel administrador
@@ -76,20 +76,20 @@ export default function Header() {
                 className='flex flex-row mr-[10%] justify-center items-center cursor-pointer'
                 onClick={()=>setModal(!modal)}
             >
-                <p className='font-bold mr-2 text-amber-400 hover:text-amber-300'>{user.attributes.email.split('@')[0]}</p>
-                <BiUserCircle className='w-[40px] h-[40px] fill-violet-950 hover:fill-violet-900'/>
+                <p className='font-bold mr-2 text-amber-400 hover:text-amber-300 transition-all duration-100'>{user.attributes.email.split('@')[0]}</p>
+                <BiUserCircle className='w-[40px] h-[40px] fill-violet-950 hover:fill-violet-900 transition-all duration-100'/>
             </div>  
             
         </div>
         {modal &&
             <div className='fixed top-[100px] right-[10%] bg-slate-100 border-l-2 border-b-2 border-violet-950'>
                 <div className='flex flex-col justify-start divide-y-[1px] divide-amber-400'>
-                    <div className='flex flex-row items-center justify-start py-2 px-4 cursor-pointer text-amber-400 hover:text-amber-300 hover:bg-white'>
+                    <div className='flex flex-row items-center justify-start py-2 px-4 cursor-pointer text-amber-400 hover:text-amber-300 hover:bg-white transition-all duration-100'>
                         <p className='mr-2'>Cuenta</p>
                         <MdOutlineManageAccounts className='w-[18px] h-[18px]'/>
                     </div>
                     <div 
-                        className='flex flex-row items-center justify-start py-2 px-4 cursor-pointer text-amber-400 hover:text-amber-300 hover:bg-white'
+                        className='flex flex-row items-center justify-start py-2 px-4 cursor-pointer text-amber-400 hover:text-amber-300 hover:bg-white transition-all duration-100'
                         onClick={()=> signOut()}
                     >
                         <p className='mr-2'>Cerrar sesión</p>

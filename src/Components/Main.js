@@ -15,7 +15,7 @@ export default function Main() {
                 <Header/>
             </div>
             {/* Contenido */}
-            <div className='z-0 h-[100%] w-[80%] pt-[100px] bg-white'>
+            <div className='z-0 flex justify-center h-[100%] w-[80%] pt-[100px] px-[5%] bg-white'>
                 <Outlet/>
             </div>
         </div>
