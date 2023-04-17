@@ -9,9 +9,10 @@ export default function Content() {
     <>
       {/* Versión WEB */}    
       <div className='hidden md:flex w-[100%] justify-center'>
-          <div className='flex flex-col pt-[20px]'>
+          {/* Snap en eje Y */}
+          <div className='snap-y snap-mandatory overflow-y-scroll mt-[100px]'>
             {/* Párrafo 1 */}
-            <div className='flex flex-row w-full '>
+            <div className='flex flex-row w-full h-[100%] snap-start'>
               <div className='flex py-2 pr-4 w-[60%] items-center justify-center'>
                 <img src={portada2} alt="portada2" className='rounded-[25px] border-2 border-amber-400' /> 
               </div>
@@ -41,7 +42,7 @@ export default function Content() {
             </div>
             
             {/* Párrafo 2 */}
-            <div className='flex flex-row w-full mt-4'>
+            <div className='flex flex-row w-full mt-4 h-[100%] snap-start'>
               <div className='py-4 pr-8 w-[40%] text-[18px] items-center'>
                 <p 
                   className='font-bold text-[25px] text-amber-400'
@@ -69,8 +70,8 @@ export default function Content() {
             </div>
 
             {/* Párrafo 3 */}
-            <div className='flex flex-row w-full mt-4'>
-
+            <div className='flex flex-row w-full mt-4 h-[100%] snap-start'>
+              Hola hola
             </div>
             
           </div>
