@@ -36,13 +36,13 @@ export default function ConfirmEmail() {
     }
 
   return (
-    <div className='flex w-full min-h-screen items-center justify-center bg-gradient-to-r from-violet-950 to-amber-400'>
+    <div className='flex w-full h-[100%] items-center justify-center'>
         {/* Versión WEB */}    
         <div className='hidden sm:flex flex-col'>
             {loading ?
                 <Loader/>
                 :
-                <div className='relative flex flex-col items-center justify-center bg-white py-[30px] px-[60px] min-w-[450px] min-h-[350px] rounded-[35px] border-4 border-amber-400'>
+                <div className='relative flex flex-col items-center justify-center bg-slate-100 py-[30px] px-[60px] min-w-[450px] min-h-[350px] rounded-[35px] border-4 border-amber-400'>
                     <img src={logo} alt="logo" className='w-[110px] mb-3' />
                     <p className='font-bold text-[25px] text-amber-400'>Verificar E-mail</p>
                     
@@ -54,7 +54,7 @@ export default function ConfirmEmail() {
                             </p>
                             <input
                                 className='w-full mt-5 py-1 px-3 border-2 border-violet-950 rounded-md outline-none' 
-                                type="password" 
+                                type="text" 
                                 placeholder='Código' 
                                 onChange={(e)=> setCodigo(e.target.value)}
                             />
