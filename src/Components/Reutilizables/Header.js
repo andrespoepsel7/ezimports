@@ -28,32 +28,42 @@ export default function Header() {
                 <div className='flex flex-row items-center'>
                     <img src={logo} alt="logo" className='w-[85px] mr-2' onClick={()=> navigate('/main')}/>
                     <div className='flex flex-row divide-x divide-amber-400 text-[18px]'>
-                        <p 
-                            className='font-bold font-mono py-1 pr-3 cursor-pointer text-amber-400 hover:text-amber-300'
-                            onClick={()=>navigate('/main')}
-                        >
-                            Inicio
-                        </p>
-                        <p 
-                            className='font-bold font-mono py-1 px-3 cursor-pointer text-amber-400 hover:text-amber-300'
-                            onClick={()=>navigate('/panel_general')}
-                        >
-                            Panel General
-                        </p>
-                        <p 
-                            className='font-bold font-mono py-1 px-3 cursor-pointer text-amber-400 hover:text-amber-300'
-                            onClick={()=>navigate('/info')}
-                        >
-                            Información
-                        </p>
-                        {
-                            user.attributes['custom:roles'] === 'admin' &&
+                        <div className='text-center'>
+                            <p 
+                                className='font-bold font-mono py-1 pr-3 cursor-pointer text-amber-400 hover:text-amber-300'
+                                onClick={()=>navigate('/main')}
+                            >
+                                Inicio
+                            </p>
+                        </div>
+                        <div className='text-center'>
                             <p 
                                 className='font-bold font-mono py-1 px-3 cursor-pointer text-amber-400 hover:text-amber-300'
-                                onClick={()=>navigate('/panel_administrador')}
+                                onClick={()=>navigate('/panel_general')}
                             >
-                                Panel administrador
+                                Panel General
                             </p>
+                        </div>
+                        <div className='text-center'>
+                            <p 
+                                className='font-bold font-mono py-1 px-3 cursor-pointer text-amber-400 hover:text-amber-300'
+                                onClick={()=>navigate('/info')}
+                            >
+                                Información
+                            </p>
+                        </div>
+                        
+                        {
+                            user.attributes['custom:roles'] === 'admin' &&
+                            <div className='text-center'>
+                                <p 
+                                    className='font-bold font-mono py-1 px-3 cursor-pointer text-amber-400 hover:text-amber-300'
+                                    onClick={()=>navigate('/panel_administrador')}
+                                >
+                                    Panel administrador
+                                </p>
+                            </div>
+                            
                         }
                         
                     </div>
