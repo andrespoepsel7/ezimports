@@ -36,12 +36,12 @@ export default function Login() {
     }
 
 
-
+ 
 
   return (
-    <div className='flex w-full min-h-screen items-center justify-center bg-gradient-to-r from-violet-950 to-amber-400'>
+    <div className='flex w-full min-h-screen items-center justify-center'>
         {/* Versión WEB */}    
-        <div className='hidden sm:flex flex-col'>
+        <div className='hidden sm:flex flex-col pb-[100px]'>
             {loading ?
                 <Loader/>
                 :
@@ -53,13 +53,13 @@ export default function Login() {
                     <form className='flex flex-col w-full items-center' onSubmit={handleSignIn}>
                         <div className='flex flex-col w-full items-start'>
                             <input
-                                className='w-full mt-5 py-1 px-3 border-2 border-violet-950 rounded-md outline-none' 
+                                className='w-full font-sans mt-5 py-1 px-3 border-2 border-violet-950 rounded-md outline-none' 
                                 type="email" 
                                 placeholder='Email' 
                                 onChange={(e)=> setUserInfo({...userInfo, email:e.target.value})}
                             />
                             <input
-                                className='w-full mt-5 py-1 px-3 border-2 border-violet-950 rounded-md outline-none' 
+                                className='w-full font-sans mt-5 py-1 px-3 border-2 border-violet-950 rounded-md outline-none' 
                                 type="password" 
                                 placeholder='Contraseña' 
                                 onChange={(e)=> setUserInfo({...userInfo, password:e.target.value})}

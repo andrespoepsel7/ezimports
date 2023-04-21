@@ -54,9 +54,9 @@ export default function ResetPassword() {
     }
 
   return (
-    <div className='flex w-full min-h-screen items-center justify-center bg-gradient-to-r from-violet-950 to-amber-400'>
+    <div className='flex w-full min-h-screen items-center justify-center'>
         {/* Versión WEB */}    
-        <div className='hidden sm:flex flex-col'>
+        <div className='hidden sm:flex flex-col pb-[100px]'>
             {loading ?
                 <Loader/>
                 :
@@ -69,7 +69,7 @@ export default function ResetPassword() {
                         <div className='flex flex-col w-full items-start'>
                             <p className='mt-7 text-violet-950'>Ingresar el correo electónico - usuario...</p>
                             <input
-                                className='w-full mt-5 py-1 px-3 border-2 border-violet-950 rounded-md outline-none' 
+                                className='w-full font-sans mt-5 py-1 px-3 border-2 border-violet-950 rounded-md outline-none' 
                                 type="email" 
                                 placeholder='Email' 
                                 onChange={(e)=> setUserName(e.target.value)}

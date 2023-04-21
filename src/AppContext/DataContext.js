@@ -35,6 +35,8 @@ export default function DataProvider({children}) {
                 password:data.password, 
                 attributes:{
                     email:data.email,
+                    name:data.nombre,
+                    family_name:data.apellido,
                     'custom:roles': data.roles,
                 },
                 autoSignIn:{
@@ -91,13 +93,8 @@ export default function DataProvider({children}) {
             })
             console.log('Respuesta final:', response)
 
-            // Se espera la respuesta del servidor
-            let userInfo = await Auth.currentAuthenticatedUser()
-            setUser(userInfo)
-            console.log('Información: ',userInfo)
             navigate('/')
 
-            //navigate('/main')
         }catch(error){
             console.log(error)
             Swal.mixin({
@@ -184,7 +181,7 @@ export default function DataProvider({children}) {
                 title:'Exitoso!',
                 text:"Inició sesión correctamente!"
             })
-            navigate('/main')
+            navigate('/')
 
         }catch(error){
             console.log(error)

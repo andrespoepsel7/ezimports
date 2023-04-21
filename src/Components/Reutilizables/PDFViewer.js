@@ -100,9 +100,9 @@ export default function PDFViewer() {
     }
 
   return (
-    <div className='flex w-full h-[100%] justify-center'>
+    <div className='flex w-[100%] h-[100%] justify-center'>
         {/* Versión WEB */}    
-        <div className='hidden sm:flex flex-col w-[95%] py-[60px]'>
+        <div className='hidden sm:flex flex-col w-[100%] px-[12%] py-[60px]'>
             {loading ?
                 <Loader/>
                 :

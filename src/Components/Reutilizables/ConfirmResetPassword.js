@@ -128,9 +128,9 @@ export default function ConfirmResetPassword() {
 
 
   return (
-    <div className='flex w-full min-h-screen items-center justify-center bg-gradient-to-r from-violet-950 to-amber-400'>
+    <div className='flex w-full min-h-screen items-center justify-center'>
         {/* Versión WEB */}    
-        <div className='hidden sm:flex flex-col'>
+        <div className='hidden sm:flex flex-col pb-[100px]'>
             {loading ?
                 <Loader/>
                 :
@@ -146,19 +146,19 @@ export default function ConfirmResetPassword() {
                                 la nueva contraseña.
                             </p>
                             <input
-                                className='w-full mt-5 py-1 px-3 border-2 border-violet-950 rounded-md outline-none' 
+                                className='w-full font-sans mt-5 py-1 px-3 border-2 border-violet-950 rounded-md outline-none' 
                                 type="text" 
                                 placeholder='Código' 
                                 onChange={(e)=> setCodigo(e.target.value)}
                             />
                             <input
-                                className='w-full mt-5 py-1 px-3 border-2 border-violet-950 rounded-md outline-none' 
+                                className='w-full font-sans mt-5 py-1 px-3 border-2 border-violet-950 rounded-md outline-none' 
                                 type="password" 
                                 placeholder='Contraseña nueva' 
                                 onChange={(e)=> setClave(e.target.value)}
                             />
                             <input
-                                className='w-full mt-5 py-1 px-3 border-2 border-violet-950 rounded-md outline-none' 
+                                className='w-full font-sans mt-5 py-1 px-3 border-2 border-violet-950 rounded-md outline-none' 
                                 type="password" 
                                 placeholder='Repetir contrseña' 
                                 onChange={(e)=> setNuevaClave(e.target.value)}

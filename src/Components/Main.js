@@ -3,11 +3,13 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 // Header
 import Header from './Reutilizables/Header'
+// Footer
+import Footer from './Reutilizables/Footer'
 
 export default function Main() {
     
   return (
-    <div className='flex w-full min-h-screen bg-gradient-to-r from-violet-950 to-amber-400'>
+    <div className='flex w-full min-h-screen font-f1'>
         {/* Versión WEB */}    
         <div className='hidden md:flex flex-col w-full min-h-screen items-center'>
             {/* Navbar */}
@@ -15,9 +17,10 @@ export default function Main() {
                 <Header/>
             </div>
             {/* Contenido */}
-            <div className='z-0 flex justify-center h-[100%] w-[80%] pt-[100px] px-[5%] bg-white'>
+            <div className="z-0 w-[100%] pt-[100px]">
                 <Outlet/>
-            </div>
+                <Footer/>
+            </div>          
         </div>
         {/* Versión MÓVIL */}
         <div className='flex flex-col mx-0 md:hidden'>

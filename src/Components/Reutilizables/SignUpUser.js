@@ -10,13 +10,10 @@ import {FaSignInAlt} from 'react-icons/fa'
 // Swal
 import Swal from 'sweetalert2'
 
-export default function Signup() {
 
+export default function SignUpUser() {
     // Propiedades de context
     const {loading, signUp} = useContext(DataContext)
-
-    // Variables 
-    const [roles, setRoles] = useState('user')
     
     const [userInfo, setUserInfo] = useState({
         email:'',
@@ -24,14 +21,8 @@ export default function Signup() {
         nombre:'',
         apellido:'',
         confirmedPassword:'',
-        roles:roles,
+        roles:"user",
     })     
-
-    // Función para cambiar el estado de roles
-    const handleRadio = (e) => {
-        setRoles(e.target.value)
-        setUserInfo({...userInfo, roles:e.target.value})
-    }
     
     // Función para manejar el signUp
     const handleSignUp = (e) => {
@@ -57,7 +48,6 @@ export default function Signup() {
             signUp(userInfo)
         }
     }
-
   return (
     <div className='flex w-full min-h-screen items-center justify-center'>
         {/* Versión WEB */}    
@@ -102,29 +92,7 @@ export default function Signup() {
                                 placeholder='Repetir contraseña' 
                                 onChange={(e)=> setUserInfo({...userInfo, confirmedPassword:e.target.value})}
                             />
-                            <label htmlFor="role" className='font-bold text-violet-950 text-[20px] mt-2'>Rol:</label>
-                            <div className='flex flex-row mt-2'>
-                                <input 
-                                    type="radio" 
-                                    name='role' 
-                                    value='admin' 
-                                    checked={roles === 'admin'}
-                                    onChange={handleRadio} 
-                                />
-                                <p className='text-violet-950 ml-1'>Administrador</p>
-                            </div>
-                            <div className='flex flex-row mt-2'>
-                                <input 
-                                    type="radio" 
-                                    name='role' 
-                                    value='user' 
-                                    checked={roles === 'user'} 
-                                    onChange={handleRadio} />
-                                <p className='text-violet-950 ml-1'>Usuario</p>
-                            </div>
                         </div>
-
-                        
                             
                         <button className='flex flex-row items-center mt-6 py-1 px-5 bg-violet-950 text-white hover:bg-violet-900 rounded-lg border-2 border-amber-400'>
                             <p className='font-bold mr-2'>Confirmar</p>
