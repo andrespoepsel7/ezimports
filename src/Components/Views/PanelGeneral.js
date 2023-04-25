@@ -11,7 +11,7 @@ export default function PanelGeneral() {
         <div className='hidden sm:flex flex-col w-[100%] mb-auto pb-[100px] px-[12%]'>
           <div className='flex flex-col w-full'>
             <p 
-              className='text-amber-400 underline cursor-pointer'
+              className='text-c1 underline cursor-pointer'
               onClick={()=> navigate('/pdf_viewer')}
             >
               Visualizador de PDFs

@@ -8,11 +8,13 @@ import Loader from './Loader'
 // Iconos
 import {FaSignInAlt} from 'react-icons/fa'
 // Navegación
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 export default function Login() {
 
     const navigate = useNavigate()
+
+    const location = useLocation()
 
     // Propiedades de context
     const {loading, signIn} = useContext(DataContext)
@@ -28,6 +30,7 @@ export default function Login() {
     // Función para hacer el sign in del usuario
     const handleSignIn = (e) => {
         e.preventDefault()
+        console.log(location)
         signIn(userInfo)
     }
 

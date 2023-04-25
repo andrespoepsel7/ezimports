@@ -22,7 +22,7 @@ export default function Header() {
     const [modal, setModal] = useState(false)
 
   return (
-    <>
+    <div>
         {/* Versión WEB */}    
         <div className='hidden md:flex w-[100%]'>
             <div className='fixed flex flex-row top-0 left-0 w-full h-[100px] py-2 px-3 bg-c1 shadow-sm shadow-slate-200 items-center justify-between'>
@@ -41,7 +41,7 @@ export default function Header() {
                             <div className='text-center'>
                                 <p 
                                     className='font-bold py-1 px-3 cursor-pointer text-white hover:text-c2 text-[25px] transition-all duration-100'
-                                    onClick={()=>navigate('/panel_general')}
+                                    onClick={()=>navigate('/panel_general',{state:{prevUrl:'/panel_general'}})}
                                 >
                                     Panel General
                                 </p>
@@ -49,7 +49,7 @@ export default function Header() {
                             <div className='text-center'>
                                 <p 
                                     className='font-bold py-1 px-3 cursor-pointer text-white hover:text-c2 text-[25px] transition-all duration-100'
-                                    onClick={()=>navigate('/info')}
+                                    onClick={()=>navigate('/info',{state:{prevUrl:'/info'}})}
                                 >
                                     Información
                                 </p>
@@ -122,7 +122,6 @@ export default function Header() {
         <div className='flex w-[100%] md:hidden'>
             Versión disponible solo en escritorio.
         </div>
-    </>
-        
+    </div> 
   )
 }

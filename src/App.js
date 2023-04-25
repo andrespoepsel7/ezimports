@@ -46,10 +46,10 @@ function App() {
           <Route path='/confirmar_resetear_clave/:userInfo' element={<ConfirmResetPassword/>}/>
           <Route path='/signup' element={<SignUpUser/>}/>
           <Route path='/confirmar_email/:userInfo' element={<ConfirmEmail/>}/>
-          {/* Rutas de solamente usuario */}
+          {/* Rutas de USUARIO o administrador */}
           <Route path='/panel_general' element={<Authenticator role='user'><PanelGeneral/></Authenticator>}/>
           <Route path='/info' element={<Authenticator role='user'><Informacion/></Authenticator>}/>
-          {/* Rutas de solamente administrador */}
+          {/* Rutas de solamente ADMINISTRADOR */}
           <Route path='/panel_administrador' element={<Authenticator role='admin'><PanelAdministrador/></Authenticator>}/>
           <Route path='/nuevo_usuario' element={<Authenticator role='admin'><Signup/></Authenticator>}/>
           <Route path='/pdf_viewer' element={<Authenticator role='user'><PDFViewer/></Authenticator>}/>

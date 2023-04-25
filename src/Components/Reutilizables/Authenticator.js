@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext} from 'react'
 // Datacontext
 import { DataContext } from '../../AppContext/DataContext'
 // Navegación directa
-import { Navigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 // Auth
 import { Auth } from 'aws-amplify'
 // Loader
@@ -10,12 +10,18 @@ import Loader from './Loader'
 
 export default function Authenticator({children, role}) {
 
+  //Navigate
+  const navigate = useNavigate()
+
   // Context
   const {setUser} = useContext(DataContext)
 
   // Se verifica si hay un usuario en sesión
   const [cargando, setCargando] = useState(true)
   const [userInfo, setUserInfo] = useState()
+
+  // Location
+  const location = useLocation()
   
 
   // Useeffect para solo correr el código una vez en la ruta protegida
@@ -33,6 +39,7 @@ export default function Authenticator({children, role}) {
     }
 
     obtenerPermiso()
+    console.log("PATHNAME:",location)
 
     // eslint-disable-next-line
   }, [])
@@ -51,7 +58,8 @@ export default function Authenticator({children, role}) {
           return children
         }else{
           console.log('No tiene permiso de admin')
-          return <Navigate to='/'/>
+          //return <Navigate to='/'/>
+          navigate('/')
         }
       }else{
         console.log('Rol es usuario')
@@ -59,7 +67,9 @@ export default function Authenticator({children, role}) {
       }
     }else{
       console.log('No hay información asignada')
-      return <Navigate to='/'/>
+      //return <Navigate to='/login'/>
+      setUser(null)
+      navigate('/login',{state:{prevUrl:location.state.prevUrl}})
     }
     
   }

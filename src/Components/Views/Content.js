@@ -172,7 +172,9 @@ export default function Content() {
       </div>
       {/* Versión MÓVIL */}
       <div className='flex w-[100%] md:hidden'>
-          Versión disponible solo en escritorio.
+        <div className='w-[100%] px-[2%]'>
+          
+        </div>
       </div>
         
     </>

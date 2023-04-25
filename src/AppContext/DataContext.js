@@ -1,6 +1,6 @@
 import React, {createContext, useState} from 'react'
 // Navegación
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 // AWS
 import { Auth } from 'aws-amplify'
 // Swal
@@ -14,6 +14,12 @@ export default function DataProvider({children}) {
 
     // Navegación
     const navigate = useNavigate()
+    // Location
+    const location = useLocation()
+    if(location.state){
+        console.log(location.state.prevUrl)
+    }
+    
 
     // Variables
     // Para saber dentro de toda la página si está cargando algún dato
@@ -44,7 +50,11 @@ export default function DataProvider({children}) {
                 }
             })
             console.log(user)
-            navigate(`/confirmar_email/${data.email}`)
+            navigate(`/confirmar_email/${data.email}`, {
+                state:{
+                    prevUrl:'',
+                }
+            })
             
             
 
@@ -93,7 +103,11 @@ export default function DataProvider({children}) {
             })
             console.log('Respuesta final:', response)
 
-            navigate('/')
+            navigate('/',{
+                state:{
+                    prevUrl:'',
+                }
+            })
 
         }catch(error){
             console.log(error)
@@ -181,7 +195,14 @@ export default function DataProvider({children}) {
                 title:'Exitoso!',
                 text:"Inició sesión correctamente!"
             })
-            navigate('/')
+            if(location.state){
+                console.log("NAVEGANDO A OTRA RUTA")
+                navigate(`${location.state.prevUrl}`,)
+            }else{
+                console.log('NO HAY STATE')
+                navigate('/')
+            }
+            
 
         }catch(error){
             console.log(error)
@@ -244,7 +265,11 @@ export default function DataProvider({children}) {
             })
         }
         setUser()
-        navigate('/')
+        navigate('/',{
+            state:{
+                prevUrl:'',
+            }
+        })
         setLoading(false)
     }
 
