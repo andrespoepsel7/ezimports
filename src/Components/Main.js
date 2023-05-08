@@ -23,8 +23,16 @@ export default function Main() {
             </div>          
         </div>
         {/* Versión MÓVIL */}
-        <div className='flex flex-col mx-0 md:hidden'>
-            Versión disponible solo en escritorio.
+        <div className='flex flex-col w-full min-h-screen items-center md:hidden'>
+            {/* Navbar */}
+            <div className='z-10'>
+                <Header/>
+            </div>
+            {/* Contenido */}
+            <div className="z-0 w-[100%] pt-[70px]">
+                <Outlet/>
+                <Footer/>
+            </div>   
         </div>
         
     </div>
